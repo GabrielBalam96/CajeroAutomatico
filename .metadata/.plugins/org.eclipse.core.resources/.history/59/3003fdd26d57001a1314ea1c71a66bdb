@@ -1,0 +1,33 @@
+package cajero;
+import java.util.Scanner;
+
+public class CajeroAutomatico {
+	
+	//atributos 
+	
+	protected int transacciones, retiro, deposito; 
+	private static int saldo; 
+	
+	Scanner entrada = new Scanner(System.in);
+	
+	// metodo
+	
+	public void Operaciones() {
+		
+		int i = 0;
+		int opciones = 0;
+		
+		do {
+			System.out.println("Por favor seleccione una opción: ");
+			System.out.println(" 1.Consultar Saldo");
+			System.out.println(" 2.Retirar Fondos ");
+			System.out.println(" 3.Depositar En Efectivo");
+			System.out.println(" 3.Validacion De Fondos");
+			
+			
+		}while(i== 0);
+		
+		
+	}
+
+}

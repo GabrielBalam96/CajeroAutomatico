@@ -1,0 +1,27 @@
+package cajero;
+import java.util.Scanner;
+
+public class CajeroAutomatico {
+	
+	//atributos 
+	
+	protected int transacciones, retiro, deposito; 
+	private static int saldo; 
+	
+	Scanner entrada = new Scanner(System.in);
+	
+	// metodo
+	
+	public void Operaciones() {
+		
+		int i = 0;
+		int opciones = 0;
+		
+		do {
+			
+		}while(i== 0);
+		
+		
+	}
+
+}

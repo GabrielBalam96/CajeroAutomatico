@@ -1,0 +1,33 @@
+package cajero;
+
+public class Retiro extends CajeroAutomatico{
+	
+	@Override
+	public void Transacciones() {
+		
+		System.out.print("¿Cuanto deseas retirar?: ");
+		
+		Retiro(); //llamamos al metodo 
+		
+		if(retiro <= getSaldo()) {
+			
+			transacciones = getSaldo();
+			setSaldo(transacciones - retiro); 
+			
+			System.out.print("----------------------------------");
+			System.out.print("Retiraste: "+retiro);
+			System.out.print("Tu saldo actual es: "+getSaldo());
+			System.out.print("----------------------------------");
+			
+		}else {
+			
+			System.out.print("----------------------------------");
+			System.out.print("Saldo insuficiente.");
+			System.out.print("----------------------------------");
+		}
+		
+	}
+	
+	
+
+}

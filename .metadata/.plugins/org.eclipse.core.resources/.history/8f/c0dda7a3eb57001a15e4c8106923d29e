@@ -1,0 +1,23 @@
+package cajero;
+
+public class Deposito extends CajeroAutomatico  {
+	
+	@Override
+	public void Transacciones() {
+		
+		System.out.print("¿Cuanto deseas depositar?: ");
+		Deposito();
+		
+		transacciones = getSaldo(); 
+		setSaldo(transacciones + deposito);
+		
+		System.out.print("----------------------------------");
+		System.out.println("Deposito: "+deposito);
+		System.out.println("Tu saldo actual es: "+getSaldo());
+		System.out.print("----------------------------------");
+		
+		
+	}
+		
+
+}

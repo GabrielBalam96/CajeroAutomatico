@@ -1,0 +1,121 @@
+package cajero;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public abstract class CajeroAutomatico {
+	
+	//atributos 
+	
+	protected int transacciones, retiro, deposito,numeroDeTargeta,nip; 
+	private static int saldo; 
+	protected String nombre;
+	
+	
+	Scanner entrada = new Scanner(System.in);
+	
+	// metodo de operaciones del cajero
+	
+	public void Operaciones() {
+		
+		int i = 0;
+		int opciones = 0;
+		
+			do {
+				do { 
+					opciones=Integer.parseInt(JOptionPane.showInputDialog("Por favor seleccione una opción: \n"
+					+" 1.Consultar Saldo \n"
+					+" 2.Retirar Fondos \n"
+					+" 3.Depositar En Efectivo \n"
+					+" 4.Validacion De Targeta\n"
+					+" 5.Salir \n" ));
+					
+					
+				/*	System.out.println("Por favor seleccione una opción: ");
+					System.out.println(" 1.Consultar Saldo");
+					System.out.println(" 2.Retirar Fondos ");
+					System.out.println(" 3.Depositar En Efectivo");
+					System.out.println(" 4.Validacion De Targeta");
+					System.out.println(" 5.Salir");
+					
+					opciones = entrada.nextInt(); 
+					*/
+					
+					if (opciones >=1 && opciones <=6) {
+						
+						i=1;
+					}else {
+						JOptionPane.showMessageDialog(null, "La opción que eligio "+opciones+" no existe, por favor vuelva intentarlo de nuevo");
+						
+						/*System.out.println("---------------------------------------------------------------------------------");
+						System.out.println("La opción que eligio "+opciones+" no existe, por favor vuelva intentarlo de nuevo");
+						System.out.println("---------------------------------------------------------------------------------");
+						*/
+					}
+					
+					
+				}while(i == 0);
+				
+				if(opciones == 1) { //consultar saldo
+					
+					CajeroAutomatico cajero = new Usuario();
+					cajero.Transacciones();
+					
+				}else if(opciones == 2) { //retiro
+					
+					CajeroAutomatico cajero = new Retiro(); 
+					cajero.Transacciones();
+					
+				}else if(opciones == 3) {//depositar
+					
+					CajeroAutomatico cajero = new Deposito();
+					cajero.Transacciones();
+					
+				}else if(opciones == 4) {
+					
+				}else if(opciones == 5) {
+					
+					/*System.out.println("------------------------------");
+					System.out.println("¡Gracias!, vuelva muy pronto. ");
+					System.out.println("------------------------------");
+					*/
+					
+					JOptionPane.showMessageDialog(null, "¡Gracias!, vuelva muy pronto. ");
+					
+					i = 2; // termina el proceso
+				}
+			}while(i != 2); 
+		
+	}
+	
+	//metodo para retirar dinero
+	
+	public void Retiro() {
+		
+		retiro = entrada.nextInt();
+	}
+	
+	//metodo para solicitar deposito
+	
+	public void Deposito() {
+		
+		deposito = entrada.nextInt();
+		
+	}
+	
+	//metodo abstracto transacciones
+	
+	public abstract void Transacciones();
+	
+	//metodos setter and getter
+	
+	public int getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+
+	
+
+}

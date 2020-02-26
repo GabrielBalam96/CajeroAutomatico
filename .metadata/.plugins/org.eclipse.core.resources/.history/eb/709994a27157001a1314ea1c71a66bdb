@@ -1,0 +1,65 @@
+package cajero;
+import java.util.Scanner;
+
+public class CajeroAutomatico {
+	
+	//atributos 
+	
+	protected int transacciones, retiro, deposito; 
+	private static int saldo; 
+	
+	Scanner entrada = new Scanner(System.in);
+	
+	// metodo
+	
+	public void Operaciones() {
+		
+		int i = 0;
+		int opciones = 0;
+		
+			do {
+				do {
+					System.out.println("Por favor seleccione una opción: ");
+					System.out.println(" 1.Consultar Saldo");
+					System.out.println(" 2.Retirar Fondos ");
+					System.out.println(" 3.Depositar En Efectivo");
+					System.out.println(" 4.Validacion De Fondos");
+					System.out.println(" 5.Validacion De Targeta");
+					System.out.println(" 6.Salir");
+					
+					opciones = entrada.nextInt(); 
+					
+					if (opciones >=1 && opciones <=6) {
+						
+						i=1;
+					}else {
+						System.out.println("---------------------------------------------------------------------------------");
+						System.out.println("La opción que eligio "+opciones+" no existe, por favor vuelva intentarlo de nuevo");
+						System.out.println("---------------------------------------------------------------------------------");
+					}
+					
+					
+				}while(i == 0);
+				
+				if(opciones == 1) {
+					
+					
+				}else if(opciones == 2) {
+					
+				}else if(opciones == 3) {
+					
+				}else if(opciones == 4) {
+					
+				}else if(opciones == 5) {
+					
+				}else if(opciones == 6) {
+					
+					System.out.println("------------------------------");
+					System.out.println("¡Gracias!, vuelva muy pronto. ");
+					System.out.println("------------------------------");
+				}
+			}while(i != 2); 
+		
+	}
+
+}
